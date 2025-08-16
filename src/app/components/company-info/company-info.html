@@ -1,0 +1,7 @@
+<section class="company-card">
+  <h1>{{ company.name }}</h1>
+  <p><strong>RUC:</strong> {{ company.ruc }}</p>
+  <p><strong>Dirección:</strong> {{ company.address }}</p>
+  <p *ngIf="company.phone"><strong>Teléfono:</strong> {{ company.phone }}</p>
+  <p *ngIf="company.email"><strong>Email:</strong> {{ company.email }}</p>
+</section>

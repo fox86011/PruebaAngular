@@ -12,10 +12,9 @@ import { ProductListComponent } from './components/product-list/product-list';
   standalone: true,
   imports: [CommonModule, CompanyInfoComponent, ProductListComponent],
   templateUrl: './app.html',
-  styleUrls: ['./app.css'],
+  styleUrls: ['./app.css']
 })
-export class App implements OnInit {
-  // señales que usa tu app.html
+export class AppComponent implements OnInit {
   company = signal<Company | null>(null);
   branches = signal<Branch[]>([]);
   products = signal<Product[]>([]);
@@ -23,8 +22,8 @@ export class App implements OnInit {
   constructor(private inv: InventoryService) {}
 
   ngOnInit(): void {
-    this.inv.getCompany().subscribe((c) => this.company.set(c));
-    this.inv.getBranches().subscribe((b) => this.branches.set(b));
-    this.inv.getProducts().subscribe((p) => this.products.set(p));
+    this.inv.getCompany().subscribe(c => this.company.set(c));
+    this.inv.getBranches().subscribe(b => this.branches.set(b));
+    this.inv.getProducts().subscribe(p => this.products.set(p));
   }
 }
