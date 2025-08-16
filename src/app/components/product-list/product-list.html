@@ -1,0 +1,28 @@
+<section class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Categoría</th>
+        <th *ngFor="let b of branchesView()">{{ b.name }}</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of productsView()">
+        <td>{{ p.name }}</td>
+        <td>{{ p.category }}</td>
+        <td *ngFor="let b of branchesView()">{{ stockFor(p, b.id) }}</td>
+        <td><strong>{{ totalFor(p) }}</strong></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td [attr.colspan]="2 + branchesView().length" class="right">
+          <strong>Suma total de stock (todas las sucursales):</strong>
+        </td>
+        <td><strong>{{ totalStock() }}</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+</section>

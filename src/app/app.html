@@ -1,0 +1,4 @@
+<main class="container">
+  <app-company-info *ngIf="company()" [company]="company()!"></app-company-info>
+  <app-product-list [branches]="branches()" [products]="products()"></app-product-list>
+</main>

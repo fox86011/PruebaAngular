@@ -1,0 +1,12 @@
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+}
+table { border-collapse: collapse; width: 100%; }
+th, td { border-bottom: 1px solid #f1f5f9; padding: 10px; text-align: left; }
+thead th { background: #f8fafc; position: sticky; top: 0; }
+tfoot td { background: #fafafa; }
+.right { text-align: right; }
